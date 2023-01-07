@@ -1,15 +1,30 @@
 {
-  "name": "bokbuck",
+  "name": "boobuck",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint-staged": "lint-staged",
+    "prettier": "prettier --write --ingore-unknown"
+  },
+  "git": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*": "prettier --write --ignore-unknown"
+  },
+  "prettier": {
+    "arrowParens": "always",
+    "semi": true,
+    "trailingComma": "es5",
+    "singleQuote": false
   },
   "dependencies": {
     "@next/font": "13.1.1",
+    "@tailwindcss/forms": "^0.5.3",
     "@types/node": "18.11.18",
     "@types/react": "18.0.26",
     "@types/react-dom": "18.0.10",
@@ -18,6 +33,15 @@
     "next": "13.1.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "styled-components": "^5.3.6",
     "typescript": "4.9.4"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "lint-staged": "^13.1.0",
+    "postcss": "^8.4.21",
+    "prettier": "^2.8.2",
+    "prettier-plugin-tailwindcss": "^0.2.1",
+    "tailwindcss": "^3.2.4"
   }
 }
